@@ -15,7 +15,7 @@ jobs:
       - name: Ping Supabase
         run: |
           curl -s -o /dev/null -w "%{http_code}" \
-            "$SUPABASE_URL/rest/v1/1950_Bowman?select=id&limit=1" \
+            "$SUPABASE_URL/rest/v1/ideas?select=id&limit=1" \
             -H "apikey: $SUPABASE_KEY" \
             -H "Authorization: Bearer $SUPABASE_KEY"
         env:
