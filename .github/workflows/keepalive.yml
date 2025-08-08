@@ -23,9 +23,10 @@ jobs:
       - name: Ping Supabase
         run: |
           curl -s -o /dev/null -w "%{http_code}" \
-            "$SUPABASE_URL/rest/v1/ideas?select=id&limit=1" \
-            -H "apikey: $SUPABASE_KEY" \
-            -H "Authorization: Bearer $SUPABASE_KEY"
+            "https://ezqmdxggxnzbnllyabux.supabase.co/rest/v1/1950_Bowman?select=id&limit=1" \
+            -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6cW1keGdneG56Ym5sbHlhYnV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU3MTEwMDEsImV4cCI6MjA2MTI4NzAwMX0.PsWLmeVRTAVthR_On6wF7VGXFivKza_6WtPthUasDyk" \
+            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6cW1keGdneG56Ym5sbHlhYnV4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU3MTEwMDEsImV4cCI6MjA2MTI4NzAwMX0.PsWLmeVRTAVthR_On6wF7VGXFivKza_6WtPthUasDyk"
+                      
         env:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
