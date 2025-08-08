@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Debug Step
         run: echo "Starting Supabase ping..."
+        
       - name: Ping Supabase
         run: |
           curl -s -o /dev/null -w "%{http_code}" \
