@@ -11,6 +11,14 @@ jobs:
     steps:
       - name: Debug Step
         run: echo "Starting Supabase ping..."
+
+      - name: Check env vars
+        run: |
+          echo "SUPABASE_URL: $SUPABASE_URL"
+          echo "SUPABASE_KEY length: ${#SUPABASE_KEY}"
+        env:
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         
       - name: Ping Supabase
         run: |
